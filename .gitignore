@@ -1,0 +1,13 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# Vercel build output
+.vercel/
+
+# Logs
+*.log
+npm-debug.log*
