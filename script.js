@@ -160,8 +160,8 @@
   const footerLinks = [
     { label: "About", href: "#about" }, { label: "Services", href: "#services" },
     { label: "Why Choose Me", href: "#why-choose-me" }, { label: "Therapy Process", href: "#process" },
-    { label: "Photos", href: "#gallery" }, { label: "Program Highlights", href: "#program-highlights" },
-    { label: "Resources", href: "#resources" }, { label: "FAQ", href: "#faq" },
+    { label: "Photos", href: "#gallery" }, { label: "Client Reviews", href: "#client-feedback" },
+    { label: "Program Highlights", href: "#program-highlights" }, { label: "Resources", href: "#resources" }, { label: "FAQ", href: "#faq" },
     { label: "Book Appointment", href: "#booking" }, { label: "Contact", href: "#contact" }
   ];
   const footerServices = ["Online Individual Counselling", "Relationship Counselling", "Marriage Counselling", "Anxiety & Depression", "Stress Management", "Trauma Recovery", "Career & Life Guidance", "Student Counselling"];
