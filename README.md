@@ -4,6 +4,7 @@ A responsive static website for **Saranya Ganesan**, focused on **fully online c
 
 ## Current live-ready details used
 - Brand/name: **Saranya Ganesan Psychologist**
+- Recognition: **Gold Medalist**
 - Phone/WhatsApp: **+91 63833 82948**
 - Instagram: **https://www.instagram.com/saranya_psychologist_?igsh=M2xnZ2pkZG16MzY1**
 - Experience: **5+ years**
@@ -14,10 +15,11 @@ A responsive static website for **Saranya Ganesan**, focused on **fully online c
 
 ## What is included
 - Premium responsive landing page
+- Official brand logo integrated in header, footer, favicon and brand sections
 - WhatsApp-first booking flow
 - Consent checkbox and emergency disclaimer
 - Online counselling service sections
-- Workshop/photo gallery section
+- Expanded workshop/photo gallery section
 - Program highlights section instead of misleading testimonials
 - SEO metadata, canonical URL, Open Graph/Twitter image
 - JSON-LD structured data
@@ -35,7 +37,8 @@ fonts/            Self-hosted font files
 privacy.html      Privacy policy
 terms.html        Terms of service
 disclaimer.html   Disclaimer page
-favicon.svg       Website icon
+images/saranya-logo-mark.png  Official logo mark / favicon
+images/saranya-logo.png       Official full brand logo
 robots.txt        Search crawler rules
 sitemap.xml       Sitemap for search engines
 vercel.json       Static deployment config

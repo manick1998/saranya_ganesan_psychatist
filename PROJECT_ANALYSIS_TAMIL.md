@@ -16,6 +16,8 @@ Website public launch-ku romba close-aa irukku. Latest update-la important issue
 - Misleading “verified client testimonials” wording remove/rename pannirukkom.
 - Testimonials section-a “Program Highlights / Support Areas” aa safe-aa change pannirukkom.
 - Workshop/photo gallery section add pannirukkom.
+- Official Saranya Ganesan logo header/footer/favicons-la integrate pannirukkom.
+- Gold Medalist highlight add pannirukkom.
 - SEO improvements: canonical URL, absolute OG image, JSON-LD image/sameAs, favicon, robots.txt, sitemap.xml.
 - Privacy Policy, Terms, Disclaimer pages improve pannirukkom.
 - Vercel config and README update pannirukkom.
