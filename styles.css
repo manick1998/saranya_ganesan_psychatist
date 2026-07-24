@@ -852,48 +852,6 @@ ul { list-style: none; }
 .feedback-note strong { color: var(--forest); }
 @media (max-width: 640px) { .feedback-float-card { position: static; margin: 1rem auto 0; width: 100%; } }
 
-/* ============================================================
-   REVIEW PHOTO WALL + MOBILE-FIRST POLISH
-   ============================================================ */
-.review-photo-wall {
-  margin-top: 3rem;
-  padding: 1.25rem;
-  border-radius: var(--radius-xl);
-  background: linear-gradient(135deg, rgba(255,255,255,.78), rgba(238,245,238,.92));
-  border: 1px solid rgba(168,197,170,.35);
-  box-shadow: var(--shadow-card-lg);
-}
-.review-wall-head { text-align: center; max-width: 660px; margin: 0 auto 1.5rem; }
-.review-wall-head h3 { font-family: 'Playfair Display', serif; font-size: clamp(1.45rem, 3vw, 2.25rem); color: var(--text-primary); margin-top: .55rem; }
-.review-wall-head p { color: var(--text-muted); font-size: .95rem; line-height: 1.6; margin-top: .35rem; }
-.review-photo-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-@media (min-width: 720px) { .review-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 1080px) { .review-photo-grid { grid-template-columns: 1.1fr 1fr 1fr; align-items: stretch; } .review-photo-large { grid-row: span 2; } }
-.review-photo-card {
-  position: relative;
-  min-height: 180px;
-  border-radius: 24px;
-  overflow: hidden;
-  background: #111B17;
-  box-shadow: 0 18px 46px rgba(26,36,32,.16);
-  border: 1px solid rgba(255,255,255,.7);
-}
-.review-photo-card img { width: 100%; height: 100%; min-height: 180px; object-fit: cover; display: block; }
-.review-photo-large img { min-height: 520px; object-fit: cover; object-position: center top; }
-.review-photo-card figcaption {
-  position: absolute;
-  left: .8rem;
-  right: .8rem;
-  bottom: .8rem;
-  padding: .7rem .85rem;
-  border-radius: 16px;
-  color: #fff;
-  background: linear-gradient(135deg, rgba(26,36,32,.86), rgba(61,107,69,.78));
-  font-size: .78rem;
-  font-weight: 800;
-  backdrop-filter: blur(10px);
-}
-
 /* Desktop why-section refinement */
 .why-right { min-width: 0; }
 @media (min-width: 1024px) {
@@ -961,10 +919,6 @@ ul { list-style: none; }
   .phone-frame img { border-radius: 22px; }
   .feedback-card { padding: 1rem; border-radius: 22px; }
   .feedback-card p { font-size: .93rem; }
-  .review-photo-wall { margin-top: 2rem; padding: .85rem; border-radius: 26px; }
-  .review-photo-grid { grid-template-columns: 1fr; gap: .85rem; }
-  .review-photo-card, .review-photo-card img { min-height: 250px; }
-  .review-photo-large img { min-height: 430px; }
 
   .booking-grid, .contact-grid { gap: 1.5rem; }
   .booking-form, .info-card { padding: 1.15rem; border-radius: 22px; }
@@ -990,6 +944,144 @@ ul { list-style: none; }
   .stats-grid { grid-template-columns: 1fr; }
   .trust-badge { font-size: .71rem; }
   .gallery-card, .gallery-card img, .gallery-card-large img { min-height: 300px; }
-  .review-photo-large img { min-height: 390px; }
+
   .footer .socials .social-link { flex-basis: 100%; }
+}
+
+/* ============================================================
+   PREMIUM TESTIMONIAL GALLERY
+   ============================================================ */
+.premium-testimonial-section {
+  margin-top: 4rem;
+  padding: 0;
+}
+
+.premium-testimonial-head {
+  text-align: center;
+  max-width: 660px;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.premium-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: var(--sage-light);
+  color: var(--sage-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.premium-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.premium-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.premium-testimonial-grid {
+  columns: 1;
+  column-gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .premium-testimonial-grid {
+    columns: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .premium-testimonial-grid {
+    columns: 3;
+  }
+}
+
+.premium-testimonial-card {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  /* subtle glassmorphism touch */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.premium-testimonial-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.premium-testimonial-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  /* Ensuring crisp image rendering */
+  image-rendering: -webkit-optimize-contrast;
+  border-radius: 20px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-label {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.45);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@media (max-width: 767px) {
+  .premium-testimonial-section {
+    margin-top: 3rem;
+  }
+  .premium-heading {
+    font-size: clamp(1.75rem, 6vw, 2rem);
+  }
+  .premium-testimonial-grid {
+    gap: 1.25rem;
+  }
+  .premium-testimonial-card {
+    margin-bottom: 1.25rem;
+    border-radius: 16px;
+  }
+  .premium-testimonial-card img {
+    border-radius: 16px;
+  }
+  .premium-label {
+    left: 0.75rem;
+    bottom: 0.75rem;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.7rem;
+  }
 }
