@@ -21,6 +21,7 @@ A responsive static website for **Saranya Ganesan**, focused on **fully online c
 - Online counselling service sections
 - Expanded workshop/photo gallery section
 - Anonymized original client feedback section
+- Extra client review screenshot/photo wall
 - Program highlights section instead of misleading testimonials
 - SEO metadata, canonical URL, Open Graph/Twitter image
 - JSON-LD structured data
