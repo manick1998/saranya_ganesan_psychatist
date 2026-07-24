@@ -788,8 +788,5 @@ ul { list-style: none; }
 .social-whatsapp svg path { fill: currentColor; stroke: none; }
 .social-instagram { background: linear-gradient(135deg, #833AB4 0%, #E1306C 45%, #F77737 100%); box-shadow: 0 10px 24px rgba(225,48,108,.22); }
 .social-book { background: linear-gradient(135deg, var(--gold-light), var(--gold)); box-shadow: 0 10px 24px rgba(212,175,74,.18); }
-.footer-photo-strip { display: flex; gap: .55rem; margin-top: 1.2rem; max-width: 380px; }
-.footer-photo-strip img { width: 72px; height: 72px; object-fit: cover; border-radius: 18px; border: 2px solid rgba(168,197,170,.25); box-shadow: 0 10px 24px rgba(0,0,0,.18); }
-.footer-photo-strip img:nth-child(3) { width: 110px; }
 .footer-contact > div { padding: .8rem; border-radius: 14px; background: rgba(255,255,255,.04); border: 1px solid rgba(168,197,170,.10); }
 .footer-legal { flex-wrap: wrap; justify-content: center; }
