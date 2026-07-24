@@ -1,5 +1,5 @@
 /* ============================================================
-   Dr. Saranya Ganesan — Psychologist Site
+   Saranya Ganesan — Psychologist Site
    Vanilla JS: content rendering + interactions
    ============================================================ */
 (function () {
@@ -55,15 +55,15 @@
      DATA
      ============================================================ */
   const services = [
-    { icon: "user", title: "Individual Therapy", desc: "One-on-one sessions tailored to your unique needs, helping you explore emotions, overcome challenges, and build resilience.", benefits: ["Personal growth", "Coping strategies", "Emotional clarity"], color: grad("#7C9A7E", "#3D6B45"), bg: "#EEF5EE" },
+    { icon: "user", title: "Online Individual Counselling", desc: "Private online sessions tailored to your needs, helping you explore emotions, manage challenges, and build resilience.", benefits: ["Personal growth", "Coping strategies", "Emotional clarity"], color: grad("#7C9A7E", "#3D6B45"), bg: "#EEF5EE" },
     { icon: "heart", title: "Relationship Counselling", desc: "Strengthen bonds, resolve conflicts, and develop healthier communication patterns in your personal relationships.", benefits: ["Better communication", "Conflict resolution", "Deeper connection"], color: grad("#C4B8D8", "#9B8EC4"), bg: "#EDE8F5" },
     { icon: "heartHandshake", title: "Marriage Counselling", desc: "Evidence-based couples therapy to rebuild trust, intimacy, and partnership in your marriage.", benefits: ["Rebuild trust", "Improve intimacy", "Shared goals"], color: grad("#D4AF4A", "#B8962E"), bg: "#FBF5E0" },
-    { icon: "home", title: "Family Therapy", desc: "Heal family dynamics, improve communication, and create a more nurturing home environment for all members.", benefits: ["Family harmony", "Healthy boundaries", "Better dynamics"], color: grad("#7EB8C8", "#5A9AB0"), bg: "#E8F0F5" },
+    { icon: "home", title: "Student & Family Guidance", desc: "Heal family dynamics, improve communication, and create a more nurturing home environment for all members.", benefits: ["Family harmony", "Healthy boundaries", "Better dynamics"], color: grad("#7EB8C8", "#5A9AB0"), bg: "#E8F0F5" },
     { icon: "brain", title: "Anxiety Management", desc: "Evidence-based techniques to reduce anxiety, manage panic, and reclaim a sense of calm and control in your life.", benefits: ["Reduced panic", "Calmer mindset", "Better focus"], color: grad("#7C9A7E", "#3D6B45"), bg: "#EEF5EE" },
     { icon: "cloudRain", title: "Depression Therapy", desc: "Compassionate support to help you rediscover joy, meaning, and motivation through evidence-based CBT and mindfulness.", benefits: ["Renewed hope", "Better mood", "Daily functioning"], color: grad("#9B8EC4", "#7B6AA4"), bg: "#EDE8F5" },
     { icon: "zap", title: "Stress Management", desc: "Practical tools and therapeutic strategies to manage work pressure, burnout, and life stress effectively.", benefits: ["Work-life balance", "Resilience building", "Relaxation skills"], color: grad("#D4AF4A", "#B8962E"), bg: "#FBF5E0" },
     { icon: "flame", title: "Trauma Recovery", desc: "Safe, trauma-informed therapy to process past experiences, heal emotional wounds, and move forward with strength.", benefits: ["Safe processing", "Emotional healing", "Post-traumatic growth"], color: grad("#C4857E", "#A4635C"), bg: "#F5EDEC" },
-    { icon: "briefcase", title: "Career Guidance", desc: "Navigate career confusion, workplace stress, and professional identity with psychological clarity and confidence.", benefits: ["Career clarity", "Confidence boost", "Goal setting"], color: grad("#7EB8C8", "#5A9AB0"), bg: "#E8F0F5" },
+    { icon: "briefcase", title: "Career & Life Guidance", desc: "Navigate career confusion, workplace stress, and professional identity with psychological clarity and confidence.", benefits: ["Career clarity", "Confidence boost", "Goal setting"], color: grad("#7EB8C8", "#5A9AB0"), bg: "#E8F0F5" },
     { icon: "graduation", title: "Student Counselling", desc: "Supporting students through academic pressure, peer challenges, exam anxiety, and the transition to adulthood.", benefits: ["Academic focus", "Peer relationships", "Self-confidence"], color: grad("#7C9A7E", "#3D6B45"), bg: "#EEF5EE" },
     { icon: "flower", title: "Women's Mental Health", desc: "Specialized support for women navigating hormonal changes, postpartum challenges, identity, and life transitions.", benefits: ["Hormonal wellness", "Body positivity", "Life transitions"], color: grad("#C4B8D8", "#9B8EC4"), bg: "#EDE8F5" },
     { icon: "shield", title: "Men's Mental Health", desc: "A non-judgmental space for men to explore emotions, manage anger, and develop emotional intelligence.", benefits: ["Emotional literacy", "Anger management", "Healthy masculinity"], color: grad("#3D6B45", "#2D5235"), bg: "#EEF5EE" },
@@ -77,7 +77,7 @@
     { icon: "heart", title: "Compassionate Approach", desc: "Every session begins with empathy. I meet you exactly where you are — without judgment, without pressure.", color: grad("#C4857E", "#A4635C") },
     { icon: "shield", title: "Confidential Sessions", desc: "Your privacy is paramount. Everything shared in therapy stays strictly between us, always.", color: grad("#3D6B45", "#2D5235") },
     { icon: "star", title: "Personalized Treatment", desc: "No two people are alike. Your therapy plan is uniquely crafted for your personality, goals, and pace.", color: grad("#D4AF4A", "#B8962E") },
-    { icon: "flask", title: "Science-Backed Methods", desc: "I use proven modalities — CBT, ACT, EMDR, and Mindfulness — to deliver real, lasting change.", color: grad("#7EB8C8", "#5A9AB0") },
+    { icon: "flask", title: "Science-Backed Methods", desc: "I use practical, evidence-informed tools to support stress management, self-awareness, emotional regulation and healthier coping.", color: grad("#7EB8C8", "#5A9AB0") },
     { icon: "message", title: "Non-Judgmental Space", desc: "You are safe to be completely yourself here. Share freely — whatever you feel is valid and welcome.", color: grad("#9B8EC4", "#7B6AA4") },
     { icon: "laptop", title: "Flexible Online Sessions", desc: "Attend therapy from the comfort of home. Online sessions are just as effective and deeply personal.", color: grad("#7C9A7E", "#3D6B45") },
     { icon: "rupee", title: "Affordable Consultation", desc: "Quality mental healthcare should be accessible. I offer transparent pricing and flexible payment options.", color: grad("#D4AF4A", "#B8962E") }
@@ -100,12 +100,12 @@
   steps[5].icon = "smile";
 
   const qualifications = [
-    "M.Phil in Clinical Psychology (Gold Medalist)",
-    "M.A. in Psychology",
-    "RCI Registered Clinical Psychologist",
-    "Certified CBT Practitioner",
-    "EMDR Level 1 & 2 Certified",
-    "Mindfulness-Based Stress Reduction (MBSR)"
+    "Psychology professional focused on online counselling",
+    "5+ years of counselling and mental wellness experience",
+    "Stress management and emotional wellness programs",
+    "Student mental health awareness sessions",
+    "Employee mental well-being and resilience workshops",
+    "Confidential, supportive, client-centred approach"
   ];
 
   const values = [
@@ -135,28 +135,25 @@
   const faqs = [
     { q: "How many sessions will I need?", a: "Every person's journey is unique. Typically, clients notice meaningful changes within 6–12 sessions. However, your therapy plan is completely personalized — some concerns resolve sooner, while deeper work may take longer. We'll regularly review progress together and adjust as needed." },
     { q: "Is therapy completely confidential?", a: "Absolutely. Confidentiality is the cornerstone of effective therapy. Everything you share stays between us. The only exceptions are legally mandated situations involving imminent risk to your safety or others — and I'll always discuss this with you upfront." },
-    { q: "Are online consultations available?", a: "Yes! Online sessions are available via Zoom or Google Meet and are just as effective as in-person therapy. Many clients actually prefer the comfort and convenience of attending from home. You can book online or offline sessions based on your preference." },
+    { q: "Are online consultations available?", a: "Yes! Online sessions are available via Zoom or Google Meet and are just as effective as in-person therapy. Many clients actually prefer the comfort and convenience of attending from home. You can book online counselling sessions based on availability." },
     { q: "How long is each session?", a: "Standard sessions are 50–60 minutes. Initial assessment sessions may run slightly longer (60–75 minutes) to allow for a thorough understanding of your concerns and background. Couples and family sessions are typically 75–90 minutes." },
-    { q: "What are the consultation fees?", a: "Individual sessions start from ₹1,500 for online and ₹2,000 for in-person. Couples sessions are priced differently. I believe in transparent, fair pricing with no hidden costs. Reach out via WhatsApp for current pricing and available packages." },
+    { q: "What are the consultation fees?", a: "Individual sessions start from ₹1,200 for online and ₹2,000 for in-person. Couples sessions are priced differently. I believe in transparent, fair pricing with no hidden costs. Reach out via WhatsApp for current pricing and available packages." },
     { q: "Is emergency support available?", a: "If you're experiencing a mental health emergency, please contact iCall (9152987821) or Vandrevala Foundation (1860-2662-345) which operate 24/7. While I don't provide 24/7 emergency services, I do my best to accommodate urgent appointments and will always provide you with appropriate emergency resources." },
     { q: "I've never done therapy before. What should I expect?", a: "That's completely okay — most people feel nervous before their first session! Your first session is simply a conversation. I'll ask about what brings you to therapy, your background, and your goals. There's no pressure to share anything you're not ready for. I'll guide you gently at a pace that feels safe." },
     { q: "Do you work with teenagers and children?", a: "Yes, I work with adolescents (13+) and their families. For younger children, I typically work with parents/caregivers to support the child's well-being. Sessions with teens are age-appropriate and adapted to their unique developmental needs." }
   ];
 
   const testimonials = [
-    { name: "Priya M.", role: "Software Engineer, 28", content: "I came to Dr. Saranya struggling with severe anxiety that was affecting my work and relationships. After 12 sessions, I have tools I use daily. I feel like I've reclaimed my life. Her compassion and expertise are unmatched.", before: "Constant panic attacks, couldn't sleep", after: "Calm, confident, sleeping well", rating: 5, initials: "PM", color: grad("#7C9A7E", "#3D6B45") },
-    { name: "Arjun K.", role: "Working Professional, 34", content: "As a man, I was skeptical about therapy. Dr. Saranya created such a safe, non-judgmental space that I opened up for the first time in years. She helped me process childhood trauma I'd been carrying for decades.", before: "Suppressed emotions, relationship issues", after: "Emotionally open, healthier relationships", rating: 5, initials: "AK", color: grad("#9B8EC4", "#7B6AA4") },
-    { name: "Meera & Rahul", role: "Married Couple, 30s", content: "We were on the verge of separation after 7 years of marriage. Dr. Saranya's couples therapy was a complete turning point. We learned to listen, to feel safe with each other again. We're grateful beyond words.", before: "Constant arguments, emotional distance", after: "Renewed intimacy and mutual respect", rating: 5, initials: "MR", color: grad("#D4AF4A", "#B8962E") },
-    { name: "Sneha R.", role: "College Student, 21", content: "Exam pressure and comparison with peers had pushed me to a very dark place. Dr. Saranya listened without judgment and helped me see my worth beyond grades. I'm now doing better academically and emotionally.", before: "Severe academic anxiety, low self-esteem", after: "Confident, balanced approach to life", rating: 5, initials: "SR", color: grad("#7EB8C8", "#5A9AB0") },
-    { name: "Lakshmi V.", role: "Homemaker & Mother, 42", content: "After years of putting everyone else first, I had completely lost myself. Dr. Saranya helped me understand that taking care of my mental health is not selfish — it's essential. The online sessions were so convenient.", before: "Emotional burnout, identity loss", after: "Rediscovered purpose and self-worth", rating: 5, initials: "LV", color: grad("#C4B8D8", "#9B8EC4") },
-    { name: "Vikram S.", role: "Entrepreneur, 38", content: "Business stress was destroying my health and family life. Dr. Saranya taught me practical stress management techniques and helped me set healthy boundaries. Best investment I've ever made — in myself.", before: "Chronic stress, insomnia, irritability", after: "Focused, rested, present for family", rating: 5, initials: "VS", color: grad("#3D6B45", "#2D5235") }
+    { name: "Online Counselling", role: "Confidential support", content: "Private online counselling support for stress, anxiety, emotional overwhelm, relationship concerns, self-confidence and personal growth — with flexible evening availability.", before: "Stress, confusion or emotional overload", after: "Clarity, coping skills and steady support", rating: 5, initials: "OC", color: grad("#7C9A7E", "#3D6B45") },
+    { name: "Student Wellness", role: "Awareness programs", content: "Mental wellness sessions for students focused on stress management, exam pressure, self-esteem, emotional awareness and healthy coping practices.", before: "Academic pressure and uncertainty", after: "Better awareness and practical tools", rating: 5, initials: "SW", color: grad("#9B8EC4", "#7B6AA4") },
+    { name: "Workplace Wellbeing", role: "Stress management workshops", content: "Employee mental well-being programs designed to help teams understand stress, build resilience and create healthier work routines.", before: "Burnout and work stress", after: "Resilience and mindful productivity", rating: 5, initials: "WW", color: grad("#D4AF4A", "#B8962E") }
   ];
 
   const contactInfo = [
-    { icon: "mapPin", label: "Clinic Address", value: "123, Wellness Centre, Anna Nagar\nChennai, Tamil Nadu 600040", color: grad("#7C9A7E", "#3D6B45"), bg: "#EEF5EE", link: "https://maps.google.com/?q=Chennai,+Tamil+Nadu", linkLabel: "Get Directions" },
-    { icon: "phone", label: "Phone & WhatsApp", value: "+91 XXXXX XXXXX", color: grad("#25D366", "#128C7E"), bg: "#E8F5EE", link: "tel:+91XXXXXXXXXX", linkLabel: "Call Now" },
-    { icon: "mail", label: "Email", value: "hello@saranyaganesan.com", color: grad("#7EB8C8", "#5A9AB0"), bg: "#E8F0F5", link: "mailto:hello@saranyaganesan.com", linkLabel: "Send Email" },
-    { icon: "clock", label: "Business Hours", value: "Mon–Fri: 9:00 AM – 7:00 PM\nSaturday: 9:00 AM – 2:00 PM\nSunday: Closed", color: grad("#D4AF4A", "#B8962E"), bg: "#FBF5E0", link: null, linkLabel: null }
+    { icon: "mapPin", label: "Session Mode", value: "Fully Online Counselling\nAvailable across India", color: grad("#7C9A7E", "#3D6B45"), bg: "#EEF5EE", link: "#booking", linkLabel: "Book Online" },
+    { icon: "phone", label: "Phone & WhatsApp", value: "+91 63833 82948", color: grad("#25D366", "#128C7E"), bg: "#E8F5EE", link: "https://wa.me/916383382948", linkLabel: "WhatsApp Now" },
+    { icon: "heart", label: "Instagram", value: "@saranya_psychologist_", color: grad("#C4B8D8", "#9B8EC4"), bg: "#EDE8F5", link: "https://www.instagram.com/saranya_psychologist_?igsh=M2xnZ2pkZG16MzY1", linkLabel: "Follow on Instagram" },
+    { icon: "clock", label: "Availability", value: "Mon–Fri: After 6:00 PM – 12:00 AM\nSaturday–Sunday: Flexible", color: grad("#D4AF4A", "#B8962E"), bg: "#FBF5E0", link: null, linkLabel: null }
   ];
 
   const footerLinks = [
@@ -165,8 +162,8 @@
     { label: "Testimonials", href: "#testimonials" }, { label: "Resources", href: "#resources" },
     { label: "FAQ", href: "#faq" }, { label: "Book Appointment", href: "#booking" }, { label: "Contact", href: "#contact" }
   ];
-  const footerServices = ["Individual Therapy", "Relationship Counselling", "Marriage Counselling", "Anxiety & Depression", "Stress Management", "Trauma Recovery", "Career Guidance", "Student Counselling"];
-  const socials = [{ label: "Ig", href: "https://www.instagram.com/saranya_psychologist_/" }, { label: "Fb", href: "#" }, { label: "Li", href: "#" }, { label: "Yt", href: "#" }];
+  const footerServices = ["Online Individual Counselling", "Relationship Counselling", "Marriage Counselling", "Anxiety & Depression", "Stress Management", "Trauma Recovery", "Career & Life Guidance", "Student Counselling"];
+  const socials = [{ label: "Ig", href: "https://www.instagram.com/saranya_psychologist_?igsh=M2xnZ2pkZG16MzY1" }, { label: "Wa", href: "https://wa.me/916383382948" }, { label: "Book", href: "#booking" }];
 
   /* ============================================================
      RENDER
@@ -463,10 +460,10 @@
       const concern = $("#concern").value.trim();
       const time = $("#preferredTime").value;
       const session = hidden.value;
-      const msg = "Hello Dr. Saranya, I'd like to book a session.\n\nName: " + name +
+      const msg = "Hello Saranya, I'd like to book a session.\n\nName: " + name +
         "\nPhone: " + phone + "\nEmail: " + email + "\nSession type: " + session +
         "\nPreferred time: " + time + "\nConcern: " + concern;
-      const waUrl = "https://wa.me/919500113659?text=" + encodeURIComponent(msg);
+      const waUrl = "https://wa.me/916383382948?text=" + encodeURIComponent(msg);
       form.hidden = true;
       success.hidden = false;
       success.scrollIntoView({ behavior: "smooth", block: "center" });

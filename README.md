@@ -1,55 +1,45 @@
-# Dr. Saranya Ganesan — Psychology Website
+# Saranya Ganesan Psychologist — Online Counselling Website
 
-A single-page marketing + appointment site for a clinical psychologist, built with **plain HTML, CSS, and JavaScript** (no framework, no build step).
+A single-page professional website for **Saranya Ganesan**, focused on **fully online counselling**, mental wellness support, stress-management programs, student wellness and workplace wellbeing workshops.
 
-## Features
-- Fully responsive, animated single-page design (hero, services, about, testimonials, resources, FAQ, booking, contact).
-- Self-hosted fonts (Inter + Playfair Display) and local images — works fully offline.
-- Booking form that opens a pre-filled WhatsApp message with all client details.
-- Google Maps embed, Instagram + WhatsApp links, crisis-hotline notices.
-- SEO: meta tags, OpenGraph/Twitter, `Psychologist` JSON-LD.
+## Current live-ready details used
+- Brand/name: **Saranya Ganesan Psychologist**
+- Phone/WhatsApp: **+91 63833 82948**
+- Instagram: **https://www.instagram.com/saranya_psychologist_?igsh=M2xnZ2pkZG16MzY1**
+- Experience: **5+ years**
+- People reached: **200+**
+- Service mode: **Fully online counselling**
+- Timing: **Monday–Friday after 6:00 PM to 12:00 AM; Saturday–Sunday flexible**
+- Clinic/map: **Not used — online only**
+
+## Files
+```txt
+index.html        Main landing page
+styles.css        Full responsive styling
+script.js         Dynamic content, FAQ, booking, WhatsApp form
+images/           Real Saranya/workshop photos
+privacy.html      Privacy policy
+terms.html        Terms of service
+disclaimer.html   Disclaimer page
+vercel.json       Static deployment config
+```
 
 ## Local preview
 ```bash
-# option 1 — just open the file
-open index.html        # or double-click it
-
-# option 2 — local server (recommended)
 python3 -m http.server 8000
-# then visit http://localhost:8000
+# Open http://localhost:8000
 ```
 
-## Deploy to Vercel (automatic, from GitHub)
-1. Push this folder to a GitHub repo (see below).
-2. Go to https://vercel.com/new → **Import Git Repository** → select your repo.
-3. Vercel auto-detects it as a static site (`framework: other`, `outputDirectory: .`).
-   - No build command needed.
-4. Click **Deploy**. After that, every `git push` to the repo triggers an automatic redeploy.
+## Deploy to Vercel
+1. Push this folder to GitHub.
+2. Go to https://vercel.com/new.
+3. Import the GitHub repository.
+4. Framework: Other / Static.
+5. Build command: none.
+6. Output directory: `.`
+7. Deploy.
 
-### Push to GitHub
-```bash
-git init            # (already done locally)
-git add -A
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/<you>/<repo>.git
-git push -u origin main
-```
-
-## Before going live — replace placeholders
-- WhatsApp / phone number: `919500113659` (currently set)
-- Email: `hello@saranyaganesan.com`
-- Clinic address: `123, Wellness Centre, Anna Nagar, Chennai`
-- Testimonials in `script.js` are sample text — swap for real, consent-based quotes.
-
-## File structure
-```
-psychologist-site/
-├── index.html        # all sections
-├── styles.css        # design system + responsive
-├── script.js         # content rendering + interactions
-├── images/           # hero.jpg, why.jpg, about.jpg
-├── fonts/            # self-hosted woff2 + fonts.css
-├── vercel.json       # static deploy config
-└── .gitignore
-```
+## Notes before final public launch
+- If you get a custom domain, update `og:url`, canonical URL, and JSON-LD URL in `index.html`.
+- If you want email enquiries, add the official email ID.
+- If any qualification/credential should be displayed, add only verified details.
