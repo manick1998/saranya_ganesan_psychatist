@@ -1044,8 +1044,6 @@ ul { list-style: none; }
   height: auto;
   display: block;
   object-fit: contain;
-  /* Ensuring crisp image rendering */
-  image-rendering: -webkit-optimize-contrast;
   border-radius: 20px;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -1080,7 +1078,6 @@ ul { list-style: none; }
     gap: 1.25rem;
   }
   .premium-testimonial-card {
-    margin-bottom: 1.25rem;
     border-radius: 16px;
   }
   .premium-testimonial-card img {
