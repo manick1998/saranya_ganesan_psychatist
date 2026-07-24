@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saranya-ganesan-psychologist.vercel.app/sitemap.xml

@@ -1,46 +1,58 @@
-# GitHub + Vercel Automatic Deployment
+# GitHub + Vercel Deployment
 
 ## Current status
-The website is updated and committed locally.
+The website has been updated for safer public launch:
 
-Commit:
-```txt
-6231666 Update online counselling website with real branding and images
-```
+- Added workshop/photo gallery section
+- Replaced misleading testimonials wording with program highlights
+- Fixed booking form preferred-time validation bug
+- Aligned booking time slots with evening/weekend availability
+- Added consent checkbox
+- Improved SEO metadata, canonical URL, JSON-LD, favicon, robots.txt and sitemap.xml
+- Improved Privacy Policy, Terms and Disclaimer pages
 
-## One-time GitHub push
-Run this in terminal:
+## Important token security
+If a GitHub token was pasted in chat or exposed anywhere, revoke it immediately:
+
+https://github.com/settings/tokens
+
+Create a fresh fine-grained token only when you need to push, then revoke it after the push.
+
+Recommended fine-grained token access:
+
+- Repository access: only `manick1998/saranya_ganesan_psychatist`
+- Repository permissions: `Contents` → `Read and write`
+- Short expiry, for example 7 or 30 days
+
+## Push from local terminal
+From this repository folder:
 
 ```bash
-cd /home/user/project
-./push_to_github.sh
+git status
+git add .
+git commit -m "Improve website SEO booking gallery and legal pages"
+git push origin main
 ```
 
-It will ask:
-- GitHub username
-- GitHub token
+If Git asks for a username/password:
 
-Token is typed securely in terminal and is not saved inside the project.
+- Username: your GitHub username
+- Password: use a fresh GitHub token, not your GitHub account password
 
 ## Vercel auto deploy setup
 
-### If Vercel already connected to this GitHub repo
-After GitHub push succeeds, Vercel will deploy automatically.
+### If Vercel is already connected to this GitHub repo
+After GitHub push succeeds, Vercel should deploy automatically.
 
 Check:
 https://vercel.com/dashboard
 
 ### If Vercel is not connected yet
 1. Go to https://vercel.com/new
-2. Import Git repository:
-   `manick1998/saranya_ganesan_psychatist`
-3. Framework preset: Other
+2. Import Git repository: `manick1998/saranya_ganesan_psychatist`
+3. Framework preset: Other / Static
 4. Build command: leave empty
 5. Output directory: `.`
 6. Click Deploy
 
 After this, every `git push` to GitHub will trigger automatic Vercel deployment.
-
-## Important
-If you pasted a GitHub token in chat, revoke it after use:
-https://github.com/settings/tokens

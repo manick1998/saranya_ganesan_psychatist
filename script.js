@@ -135,9 +135,9 @@
   const faqs = [
     { q: "How many sessions will I need?", a: "Every person's journey is unique. Typically, clients notice meaningful changes within 6–12 sessions. However, your therapy plan is completely personalized — some concerns resolve sooner, while deeper work may take longer. We'll regularly review progress together and adjust as needed." },
     { q: "Is therapy completely confidential?", a: "Absolutely. Confidentiality is the cornerstone of effective therapy. Everything you share stays between us. The only exceptions are legally mandated situations involving imminent risk to your safety or others — and I'll always discuss this with you upfront." },
-    { q: "Are online consultations available?", a: "Yes! Online sessions are available via Zoom or Google Meet and are just as effective as in-person therapy. Many clients actually prefer the comfort and convenience of attending from home. You can book online counselling sessions based on availability." },
+    { q: "Are online consultations available?", a: "Yes. Sessions are offered online through a suitable video/online platform based on confirmed availability. Many clients prefer the comfort and privacy of joining from home." },
     { q: "How long is each session?", a: "Standard sessions are 50–60 minutes. Initial assessment sessions may run slightly longer (60–75 minutes) to allow for a thorough understanding of your concerns and background. Couples and family sessions are typically 75–90 minutes." },
-    { q: "What are the consultation fees?", a: "Individual sessions start from ₹1,200 for online and ₹2,000 for in-person. Couples sessions are priced differently. I believe in transparent, fair pricing with no hidden costs. Reach out via WhatsApp for current pricing and available packages." },
+    { q: "What are the consultation fees?", a: "Consultation fees vary by session type and program. Please reach out via WhatsApp for current fees, available slots and package details before confirming your appointment." },
     { q: "Is emergency support available?", a: "If you're experiencing a mental health emergency, please contact iCall (9152987821) or Vandrevala Foundation (1860-2662-345) which operate 24/7. While I don't provide 24/7 emergency services, I do my best to accommodate urgent appointments and will always provide you with appropriate emergency resources." },
     { q: "I've never done therapy before. What should I expect?", a: "That's completely okay — most people feel nervous before their first session! Your first session is simply a conversation. I'll ask about what brings you to therapy, your background, and your goals. There's no pressure to share anything you're not ready for. I'll guide you gently at a pace that feels safe." },
     { q: "Do you work with teenagers and children?", a: "Yes, I work with adolescents (13+) and their families. For younger children, I typically work with parents/caregivers to support the child's well-being. Sessions with teens are age-appropriate and adapted to their unique developmental needs." }
@@ -159,8 +159,9 @@
   const footerLinks = [
     { label: "About", href: "#about" }, { label: "Services", href: "#services" },
     { label: "Why Choose Me", href: "#why-choose-me" }, { label: "Therapy Process", href: "#process" },
-    { label: "Testimonials", href: "#testimonials" }, { label: "Resources", href: "#resources" },
-    { label: "FAQ", href: "#faq" }, { label: "Book Appointment", href: "#booking" }, { label: "Contact", href: "#contact" }
+    { label: "Photos", href: "#gallery" }, { label: "Program Highlights", href: "#program-highlights" },
+    { label: "Resources", href: "#resources" }, { label: "FAQ", href: "#faq" },
+    { label: "Book Appointment", href: "#booking" }, { label: "Contact", href: "#contact" }
   ];
   const footerServices = ["Online Individual Counselling", "Relationship Counselling", "Marriage Counselling", "Anxiety & Depression", "Stress Management", "Trauma Recovery", "Career & Life Guidance", "Student Counselling"];
   const socials = [{ label: "Ig", href: "https://www.instagram.com/saranya_psychologist_?igsh=M2xnZ2pkZG16MzY1" }, { label: "Wa", href: "https://wa.me/916383382948" }, { label: "Book", href: "#booking" }];
@@ -284,7 +285,7 @@
     const dots = $("#testiDots");
     if (dots) {
       dots.innerHTML = testimonials.map(function (_, i) {
-        return '<button role="tab" aria-selected="' + (i === current) + '" aria-label="View testimonial ' + (i + 1) + '"></button>';
+        return '<button role="tab" aria-selected="' + (i === current) + '" aria-label="View highlight ' + (i + 1) + '"></button>';
       }).join("");
       $$("#testiDots button").forEach(function (b, i) {
         b.classList.toggle("active", i === current);
@@ -294,7 +295,7 @@
     const mini = $("#testiMini");
     if (mini) {
       mini.innerHTML = testimonials.map(function (x, i) {
-        return '<button class="mini-card' + (i === current ? " active" : "") + '" aria-label="View ' + x.name + '\'s testimonial">' +
+        return '<button class="mini-card' + (i === current ? " active" : "") + '" aria-label="View ' + x.name + ' highlight">' +
           '<div class="mini-head"><div class="mini-avatar" style="background:' + x.color + '">' + x.initials + '</div>' +
           '<div class="mini-name">' + x.name + '</div></div>' +
           '<p class="mini-text">' + x.content.slice(0, 80) + '...</p></button>';
@@ -417,7 +418,8 @@
       email: function (v) { return emailRe.test(v.trim()) ? "" : "Please enter a valid email address"; },
       phone: function (v) { return v.replace(/\D/g, "").length >= 10 ? "" : "Please enter a valid phone number"; },
       concern: function (v) { return v.trim().length >= 10 ? "" : "Please briefly describe your concern (min. 10 characters)"; },
-      preferredTime: function (v) { return v ? "" : "Please select a preferred time"; }
+      preferredTime: function (v) { return v ? "" : "Please select a preferred time"; },
+      consent: function (v, input) { return input && input.checked ? "" : "Please confirm consent before submitting"; }
     };
 
     function validate() {
@@ -425,8 +427,8 @@
       Object.keys(fields).forEach(function (key) {
         const input = $("#" + key);
         const err = $("#" + key + "Error");
-        const msg = fields[key](input.value);
-        err.textContent = msg;
+        const msg = fields[key](input.value, input);
+        if (err) err.textContent = msg;
         input.closest(".field").classList.toggle("invalid", !!msg);
         if (msg) ok = false;
       });
@@ -436,11 +438,11 @@
     // live-clear errors
     Object.keys(fields).forEach(function (key) {
       const input = $("#" + key);
-      input.addEventListener("input", function () {
+      input.addEventListener(input.type === "checkbox" ? "change" : "input", function () {
         if (input.closest(".field").classList.contains("invalid")) {
           const err = $("#" + key + "Error");
-          const msg = fields[key](input.value);
-          err.textContent = msg;
+          const msg = fields[key](input.value, input);
+          if (err) err.textContent = msg;
           input.closest(".field").classList.toggle("invalid", !!msg);
         }
       });
@@ -462,7 +464,7 @@
       const session = hidden.value;
       const msg = "Hello Saranya, I'd like to book a session.\n\nName: " + name +
         "\nPhone: " + phone + "\nEmail: " + email + "\nSession type: " + session +
-        "\nPreferred time: " + time + "\nConcern: " + concern;
+        "\nPreferred time: " + time + "\nConcern: " + concern + "\nConsent: Yes, I understand this is not emergency support.";
       const waUrl = "https://wa.me/916383382948?text=" + encodeURIComponent(msg);
       form.hidden = true;
       success.hidden = false;

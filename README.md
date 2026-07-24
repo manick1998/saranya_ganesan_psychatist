@@ -1,6 +1,6 @@
 # Saranya Ganesan Psychologist — Online Counselling Website
 
-A single-page professional website for **Saranya Ganesan**, focused on **fully online counselling**, mental wellness support, stress-management programs, student wellness and workplace wellbeing workshops.
+A responsive static website for **Saranya Ganesan**, focused on **fully online counselling**, mental wellness support, stress-management programs, student wellness and workplace wellbeing workshops.
 
 ## Current live-ready details used
 - Brand/name: **Saranya Ganesan Psychologist**
@@ -12,15 +12,32 @@ A single-page professional website for **Saranya Ganesan**, focused on **fully o
 - Timing: **Monday–Friday after 6:00 PM to 12:00 AM; Saturday–Sunday flexible**
 - Clinic/map: **Not used — online only**
 
+## What is included
+- Premium responsive landing page
+- WhatsApp-first booking flow
+- Consent checkbox and emergency disclaimer
+- Online counselling service sections
+- Workshop/photo gallery section
+- Program highlights section instead of misleading testimonials
+- SEO metadata, canonical URL, Open Graph/Twitter image
+- JSON-LD structured data
+- Privacy Policy, Terms of Service, Disclaimer
+- Favicon, sitemap and robots.txt
+- Vercel static deployment config
+
 ## Files
 ```txt
 index.html        Main landing page
 styles.css        Full responsive styling
 script.js         Dynamic content, FAQ, booking, WhatsApp form
 images/           Real Saranya/workshop photos
+fonts/            Self-hosted font files
 privacy.html      Privacy policy
 terms.html        Terms of service
 disclaimer.html   Disclaimer page
+favicon.svg       Website icon
+robots.txt        Search crawler rules
+sitemap.xml       Sitemap for search engines
 vercel.json       Static deployment config
 ```
 
@@ -39,7 +56,9 @@ python3 -m http.server 8000
 6. Output directory: `.`
 7. Deploy.
 
-## Notes before final public launch
-- If you get a custom domain, update `og:url`, canonical URL, and JSON-LD URL in `index.html`.
-- If you want email enquiries, add the official email ID.
-- If any qualification/credential should be displayed, add only verified details.
+## Notes before public launch
+- Revoke any GitHub token that was pasted in chat or shared publicly.
+- Use workshop/gallery photos only if public-use consent is confirmed.
+- If the final domain changes, update canonical URL, `og:url`, `og:image`, JSON-LD URL/image and `sitemap.xml`.
+- If an official email ID is available, add it to contact/legal pages.
+- Display only verified qualifications/credentials.
